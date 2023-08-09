@@ -1,6 +1,37 @@
 fun main() {
     println("Bem vindo ao Bytebank!")
     val contaAlex = Conta()
+    val contaFran = Conta()
+
+    println(contaFran.titular)
+    println(contaFran.numero)
+    println(contaFran.saldo)
+
+    println(contaAlex.titular)
+    println(contaAlex.numero)
+    println(contaAlex.saldo)
+
+    println("depositando na conta do Alex")
+    deposita(contaAlex, 50.0)
+    println(contaAlex.saldo)
+
+    println("depositando na conta da Fran")
+    deposita(contaFran, 70.0)
+    println(contaFran.saldo)
+}
+
+fun deposita(conta: Conta, valor: Double){
+    conta.saldo += valor
+}
+
+class Conta {
+    var titular = ""
+    var numero = 0
+    var saldo = 0.0
+}
+
+fun testaCopiasEReferencias() {
+    val contaAlex = Conta()
     contaAlex.titular = "Alex"
     contaAlex.numero = 1000
     contaAlex.saldo = 200.0
@@ -37,12 +68,6 @@ fun main() {
 
     println(contaJoao)
     println(contaMaria)
-}
-
-class Conta {
-    var titular = ""
-    var numero = 0
-    var saldo = 0.0
 }
 
 fun testaLacos(){
