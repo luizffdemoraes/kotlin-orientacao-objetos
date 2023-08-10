@@ -1,22 +1,31 @@
 fun main() {
-    println("Bem vindo ao Bytebank!")
+    println("Bem vindo ao Bytebank")
     val contaAlex = Conta()
     contaAlex.titular = "Alex"
     contaAlex.numero = 1000
-    contaAlex.saldo = 200.0
+    contaAlex.setSaldo(-200.0)
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1001
-    contaFran.saldo = 300.0
+    contaFran.setSaldo(300.0)
 
     println(contaFran.titular)
     println(contaFran.numero)
-    println(contaFran.saldo)
+    println(contaFran.getSaldo())
 
     println(contaAlex.titular)
     println(contaAlex.numero)
-    println(contaAlex.saldo)
+    println(contaAlex.getSaldo())
+
+    /*
+    println(contaFran.titular)
+    println(contaFran.numero)
+    println(contaFran.getSaldo())
+
+    println(contaAlex.titular)
+    println(contaAlex.numero)
+    println(contaAlex.getSaldo())
 
     println("depositando na conta do Alex")
     contaAlex.deposita(50.0)
@@ -52,6 +61,7 @@ fun main() {
 
     println(contaAlex.saldo)
     println(contaFran.saldo)
+     */
 }
 
 
@@ -77,6 +87,16 @@ class Conta {
             return true
         }
         return false
+    }
+
+    fun getSaldo(): Double {
+        return saldo
+    }
+
+    fun setSaldo(valor: Double){
+        if(valor > 0){
+            saldo = valor
+        }
     }
 }
 
