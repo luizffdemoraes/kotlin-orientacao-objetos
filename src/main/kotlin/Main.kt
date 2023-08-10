@@ -3,20 +3,20 @@ fun main() {
     val contaAlex = Conta()
     contaAlex.titular = "Alex"
     contaAlex.numero = 1000
-    contaAlex.setSaldo(-200.0)
+    contaAlex.deposita(-200.0)
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1001
-    contaFran.setSaldo(300.0)
+    contaFran.deposita(300.0)
 
     println(contaFran.titular)
     println(contaFran.numero)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
 
     println(contaAlex.titular)
     println(contaAlex.numero)
-    println(contaAlex.getSaldo())
+    println(contaAlex.saldo)
 
     /*
     println(contaFran.titular)
@@ -69,6 +69,7 @@ class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+       private set
 
     fun deposita(valor: Double) {
         this.saldo += valor
@@ -89,6 +90,7 @@ class Conta {
         return false
     }
 
+    /*
     fun getSaldo(): Double {
         return saldo
     }
@@ -98,18 +100,19 @@ class Conta {
             saldo = valor
         }
     }
+     */
 }
 
 fun testaCopiasEReferencias() {
     val contaAlex = Conta()
     contaAlex.titular = "Alex"
     contaAlex.numero = 1000
-    contaAlex.saldo = 200.0
+    contaAlex.deposita(200.0)
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1001
-    contaFran.saldo = 300.0
+    contaFran.deposita(300.0)
 
     println(contaAlex.titular)
     println(contaAlex.numero)
@@ -129,7 +132,7 @@ fun testaCopiasEReferencias() {
     val contaJoao = Conta()
     contaJoao.titular = "Joao"
     contaJoao.numero = 1002
-    contaJoao.saldo = 300.0
+    contaJoao.deposita(300.0)
     val contaMaria = contaJoao
     contaMaria.titular = "Maria"
 
