@@ -1,7 +1,14 @@
 fun main() {
     println("Bem vindo ao Bytebank!")
     val contaAlex = Conta()
+    contaAlex.titular = "Alex"
+    contaAlex.numero = 1000
+    contaAlex.saldo = 200.0
+
     val contaFran = Conta()
+    contaFran.titular = "Fran"
+    contaFran.numero = 1001
+    contaFran.saldo = 300.0
 
     println(contaFran.titular)
     println(contaFran.numero)
@@ -12,22 +19,65 @@ fun main() {
     println(contaAlex.saldo)
 
     println("depositando na conta do Alex")
-    deposita(contaAlex, 50.0)
+    contaAlex.deposita(50.0)
     println(contaAlex.saldo)
 
     println("depositando na conta da Fran")
-    deposita(contaFran, 70.0)
+    contaFran.deposita(70.0)
+    println(contaFran.saldo)
+
+    println("sacando na conta do Alex")
+    contaAlex.deposita(250.0)
+    println(contaAlex.saldo)
+
+    println("sacando na conta da Fran")
+    contaFran.deposita(100.0)
+    println(contaFran.saldo)
+
+    println("saca em excesso na conta do Alex")
+    contaAlex.saca(100.0)
+    println(contaAlex.saldo)
+
+    println("saca em excesso na conta da Fran")
+    contaFran.saca(100.0)
+    println(contaFran.saldo)
+
+    println("Transferência da conta da Fran para o Alex")
+
+    if(contaFran.transfere(300.0, contaAlex)){
+        println("Transferência sucedida")
+    } else {
+        println("Falha na transferência")
+    }
+
+    println(contaAlex.saldo)
     println(contaFran.saldo)
 }
 
-fun deposita(conta: Conta, valor: Double){
-    conta.saldo += valor
-}
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+
+    fun deposita(valor: Double) {
+        this.saldo += valor
+    }
+
+    fun saca(valor: Double) {
+        if (saldo >= valor) {
+            this.saldo -= valor
+        }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (saldo >= valor) {
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
+    }
 }
 
 fun testaCopiasEReferencias() {
@@ -70,9 +120,9 @@ fun testaCopiasEReferencias() {
     println(contaMaria)
 }
 
-fun testaLacos(){
+fun testaLacos() {
     var i = 0
-    while(i < 5) {
+    while (i < 5) {
 
         val titular: String = "Alex $i"
         val numeroConta: Int = 1000
