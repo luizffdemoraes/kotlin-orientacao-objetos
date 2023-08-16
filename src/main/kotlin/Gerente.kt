@@ -6,6 +6,7 @@ class Gerente(
 ) : Funcionario(nome = nome, cpf = cpf, salario = salario) {
 
     fun bonificacao(): Double {
+        println("bonificação gerente")
         return super.getBonificacao() + salario
     }
 

@@ -10,6 +10,7 @@ class Diretor(
     salario = salario
 ) {
     fun bonificacao(): Double {
+        println("bonificação diretor")
         return super.getBonificacao() + salario + plr
     }
 

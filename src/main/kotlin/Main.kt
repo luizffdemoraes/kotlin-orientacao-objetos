@@ -9,7 +9,7 @@ fun main() {
     println("nome ${alex.nome}")
     println("cpf ${alex.cpf}")
     println("salario ${alex.salario}")
-    println("bonificação ${alex.getBonificacao()}")
+    println("bonificação ${alex.getBonificacao}")
 
     val fran = Gerente(
         nome = "Fran",
@@ -48,12 +48,15 @@ fun main() {
         println("falha na autenticação")
     }
 
+    val maria = Analista(nome = "Maria", cpf = "444.444.444-44", salario = 3000.0)
+
     val calculadora = CalculadoraBonificacao()
     calculadora.registra(alex)
     calculadora.registra(fran)
     calculadora.registra(gui)
+    calculadora.registra(maria)
 
-    println("total de bonificação: ${calculadora.total}}")
+    println("total de bonificação: ${calculadora.total}")
 }
 
 

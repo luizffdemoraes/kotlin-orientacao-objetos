@@ -3,15 +3,9 @@ class CalculadoraBonificacao {
     var total: Double = 0.0
         private set
 
+    // polimorfismo reaproveitar comportamentos
     fun registra(funcionario: Funcionario) {
-        this.total += funcionario.getBonificacao()
-    }
-
-    fun registra(gerente: Gerente) {
-        this.total += gerente.getBonificacao()
-    }
-
-    fun registra(diretor: Diretor) {
-        this.total += diretor.getBonificacao()
+        println("nome ${funcionario.nome}")
+        this.total += funcionario.getBonificacao
     }
 }
