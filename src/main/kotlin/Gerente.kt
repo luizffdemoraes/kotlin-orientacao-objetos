@@ -7,7 +7,7 @@ class Gerente(
 
     fun bonificacao(): Double {
         println("bonificação gerente")
-        return super.getBonificacao() + salario
+        return super.getBonificacao + salario
     }
 
     fun autentica(senha: Int): Boolean {

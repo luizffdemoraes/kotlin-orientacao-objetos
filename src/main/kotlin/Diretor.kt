@@ -11,7 +11,7 @@ class Diretor(
 ) {
     fun bonificacao(): Double {
         println("bonificação diretor")
-        return super.getBonificacao() + salario + plr
+        return super.getBonificacao + salario + plr
     }
 
     fun autentica(senha: Int): Boolean {
