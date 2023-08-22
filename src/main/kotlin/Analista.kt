@@ -1,11 +1,12 @@
 class Analista(
     nome: String,
     cpf: String,
-    salario: Double
+    salario: Double, override val getBonificacao: Double
 ) : Funcionario(nome = nome, cpf = cpf, salario = salario) {
 
-    fun bonificacao(): Double {
+    override val bonificacao: Double
+        get() {
         println("bonificação analista")
-        return 1000 + salario
+        return salario * 0.1
     }
 }
