@@ -1,4 +1,4 @@
-abstract class Gerente(
+class Gerente(
     nome: String,
     cpf: String,
     salario: Double,

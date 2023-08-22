@@ -3,7 +3,7 @@ class Diretor(
     cpf: String,
     salario: Double,
     val senha: Int,
-    val plr: Double, override val getBonificacao: Double
+    val plr: Double,
 ) : Funcionario(
     nome = nome,
     cpf = cpf,

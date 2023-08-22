@@ -1,7 +1,7 @@
 class Analista(
     nome: String,
     cpf: String,
-    salario: Double, override val getBonificacao: Double
+    salario: Double,
 ) : Funcionario(nome = nome, cpf = cpf, salario = salario) {
 
     override val bonificacao: Double

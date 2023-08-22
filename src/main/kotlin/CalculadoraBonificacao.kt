@@ -6,6 +6,6 @@ class CalculadoraBonificacao {
     // polimorfismo reaproveitar comportamentos
     fun registra(funcionario: Funcionario) {
         println("nome ${funcionario.nome}")
-        this.total += funcionario.getBonificacao
+        this.total += funcionario.bonificacao
     }
 }
