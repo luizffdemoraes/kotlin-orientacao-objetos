@@ -3,6 +3,7 @@ abstract class Funcionario(
     val cpf: String,
     val salario: Double
 ) {
+
     // open fun getBonificacao(): Double = salario * 0.1
     // abstract val getBonificacao: Double
     /*
