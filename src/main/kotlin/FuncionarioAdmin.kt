@@ -1,15 +1,16 @@
 abstract class FuncionarioAdmin(
-    val nome: String,
-    val cpf: String,
-    val salario: Double,
-    val senha: Int
-) {
+    nome: String,
+    cpf: String,
+    salario: Double,
+    val senha: Int,
+) : Funcionario(nome = nome, cpf = cpf, salario = salario) {
     fun autentica(senha: Int) {
         when {
             this.senha == senha -> {
                 println("Bem vindo ao Bytebank")
                 true
             }
+
             this.senha != senha -> println("Falha na autenticação")
         }
     }
@@ -22,5 +23,4 @@ abstract class FuncionarioAdmin(
         return salario * 0.1
     }
      */
-    abstract val bonificacao: Double
 }

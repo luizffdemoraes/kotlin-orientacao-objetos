@@ -15,7 +15,7 @@ fun main() {
     )
     val sistema = SistemaInterno()
     sistema.entra(admin = gerente, senha = 1000)
-    sistema.entra(admin = gerente, senha = 2000)
+    sistema.entra(admin = diretor, senha = 2000)
 }
 
 
