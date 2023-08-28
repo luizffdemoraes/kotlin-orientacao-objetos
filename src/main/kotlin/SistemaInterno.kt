@@ -1,6 +1,6 @@
 class SistemaInterno {
 
-    fun entra(admin: Autenticavel, senha: Int) {
+    fun entra(admin: Gerente, senha: Int) {
         admin.autentica(senha)
     }
 }

@@ -10,9 +10,13 @@ class Diretor(
     salario = salario,
     senha = senha
 ) {
+
+
     override val bonificacao: Double
         get() {
             println("bonificação diretor")
             return salario + plr
         }
+
+    // override fun auteticavel(senha: Int): Boolean = super<Autenticavel>.autentica(senha)
 }

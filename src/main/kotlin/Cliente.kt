@@ -1,16 +1,7 @@
 class Cliente(
     val nome: String,
     val cpf: String,
-    val senha: Int
-) : Autenticavel {
-    override fun autentica(senha: Int): Boolean {
-        when {
-            this.senha == senha -> {
-                println("Bem vindo ao Bytebank")
-                true
-            }
+    override val senha: Int
+) : Autenticavel{
 
-            this.senha != senha -> println("Falha na autenticação")
-        }
-    }
 }

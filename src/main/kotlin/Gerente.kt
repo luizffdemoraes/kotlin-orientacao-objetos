@@ -10,4 +10,7 @@ class Gerente(
             println("bonificação gerente")
             return salario
         }
+
+
+   // override fun auteticavel(senha: Int): Boolean = super<Autenticavel>.autentica(senha)
 }

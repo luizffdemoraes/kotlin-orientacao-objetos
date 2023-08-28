@@ -2,17 +2,14 @@ abstract class FuncionarioAdmin(
     nome: String,
     cpf: String,
     salario: Double,
-    val senha: Int,
-) : Funcionario(nome = nome, cpf = cpf, salario = salario) {
+    override val senha: Int,
+) : Funcionario(nome = nome, cpf = cpf, salario = salario), Autenticavel {
 
-    fun autentica(senha: Int) {
-        when {
-            this.senha == senha -> {
-                println("Bem vindo ao Bytebank")
-                true
-            }
-
-            this.senha != senha -> println("Falha na autenticação")
+    override fun autentica(senha: Int): Boolean {
+        println("autentica funcionário admin")
+        if (this.senha == senha) {
+            true
         }
+        return false
     }
 }
